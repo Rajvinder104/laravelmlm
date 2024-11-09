@@ -1,0 +1,122 @@
+/* Main container */
+.treemain {
+    overflow: auto;
+    margin: 0 auto;
+    width: 100%;
+    min-height: calc(100vh - 250px);
+    padding-top: 30px;
+}
+
+.main-node {
+    display: inline-block;
+    text-align: center;
+    margin: 30px;
+    vertical-align: top;
+    position: relative;
+}
+
+/* Direct child (first level of users) */
+.direct-node {
+    display: inline-block;
+    text-align: center;
+    margin: 20px;
+    vertical-align: top;
+    position: relative;
+}
+
+/* Sub-child nodes (nested level of users) */
+.sub-node {
+    display: inline-block;
+    text-align: center;
+    margin: 15px;
+    vertical-align: top;
+    position: relative;
+}
+
+/* Member image box */
+.member-img {
+    position: relative;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #666;
+    font-family: Arial, Verdana, Tahoma;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.member-img img {
+    max-width: 60px;
+    border-radius: 50%;
+}
+
+/* Tooltip on hover */
+.member-img .on-hover {
+    position: absolute;
+    background: #fff;
+    border: 2px solid #efefef;
+    width: 220px;
+    font-size: 14px;
+    text-align: left;
+    padding: 10px;
+    color: #000;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s linear 0s;
+    top: 100%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+    z-index: 111;
+}
+
+.member-img:hover .on-hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Tree structure */
+.sub-tree {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    position: relative;
+    transition: all 0.5s;
+}
+
+/* Direct node to sub-node arrows */
+/*  */
+
+.sub-tree .direct-node > .sub-tree {
+    margin-top: 20px;
+}
+
+/* Spacing and arrow lines */
+.sub-tree:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid #000;
+    height: 20px;
+    width: 1px;
+}
+
+.treemain ul {
+    padding-top: 20px;
+    position: relative;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.treemain span {
+    display: block;
+    color: #000;
+    position: relative;
+    top: 5px;
+    padding: 2px 0;
+    font-size: 16px;
+    letter-spacing: 0.4px;
+}
